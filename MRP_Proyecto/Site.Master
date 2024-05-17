@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MRP_Proyecto.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Proyecto MRP</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <style>
+        body {
+            padding-top: 56px;
+        }
+
+        .navbar {
+            box-shadow: 0 4px 6px -6px #222;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .nav-item {
+            margin: 0 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" runat="server" href="~/">Proyecto MRP</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">Acerca de</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Productos">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Pedidos">Pedidos</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Clientes">Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Inventarios">Inventario</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Planeacion">Planeacion</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/VerUsuarios">Usuarios</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Proyecto MRP</p>
+            </footer>
+        </div>
+
+        <asp:PlaceHolder runat="server">
+            <%: Scripts.Render("~/Scripts/jquery-3.3.1.slim.min.js") %>
+            <%: Scripts.Render("~/Scripts/popper.min.js") %>
+            <%: Scripts.Render("~/Scripts/bootstrap.min.js") %>
+        </asp:PlaceHolder>
+    </form>
+</body>
+</html>
